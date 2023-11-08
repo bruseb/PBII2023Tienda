@@ -51,7 +51,7 @@ public class Tienda {
 			}
 
 		}
-		throw new VendibleInexistenteException();
+		return null;
 	}
 
 	public void agregarProducto(Producto producto, Integer cantidad) {
@@ -66,6 +66,7 @@ public class Tienda {
 		
 		for (int i = 0; i < cantidad; i++) {
 		Producto buscado = getVendible(producto.getCodigo());
+				
 		if(buscado == null) {
 			throw new StockInsuficienteException();
 		}else {
